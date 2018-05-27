@@ -8,4 +8,4 @@ slots = 6
 skipOrigin = True
 
 # Capture Method
-captureMethod = None
+captureMethod = 'finalOnSingleton'
