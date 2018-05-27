@@ -1,4 +1,5 @@
 from collections import namedtuple
+import cfg
 
 class Position(namedtuple('Position', ['boardList', 'playerToMove'])):
 	"""boardList represents the state of the board
@@ -12,12 +13,12 @@ class Position(namedtuple('Position', ['boardList', 'playerToMove'])):
 		"""We represent the board as a string of two lines.
 		Player 2's home slot on line 1 left, P1 on line 2 right"""
 		repString = "("
-		for slot in range(7): # Top row
+		for slot in range(cfg.slots + 1): # Top row
 			repString += "{} ".format(self.boardList[slot])
 		repString += " )\n"
 
 		repString += "( "
-		for slot in range(13, 6, -1): # Bottom row
+		for slot in range((totalSlots - 1), cfg.slots, -1): # Bottom row
 			repString += " {}".format(self.boardList[slot])
 		repString += ")"
 
@@ -27,21 +28,22 @@ class Position(namedtuple('Position', ['boardList', 'playerToMove'])):
 		""" Returns a list of valid slots to move """
 		moveList = []
 
-		startSlot = 1 if self.playerToMove else 8
+		startSlot = 1 if self.playerToMove else (cfg.slots + 2)
 
-		for slot in range(startSlot, startSlot + 6):
+		for slot in range(startSlot, startSlot + cfg.slots):
 			if self.boardList[slot] > 0:
 				moveList.append(slot)
 
 		return moveList
 
-	def nextSlot(self, slot):
+	def nextSlot(self, slot, startSlot):
 		""" Returns the next slot in the cycle """
-		candidateSlot = (slot - 1) % 14
+		candidateSlot = (slot - 1) % totalSlots
 
-		skipSlot = 7 if self.playerToMove else 0
+		skipSlot = (cfg.slots + 1) if self.playerToMove else 0
+		startSlot = startSlot if cfg.skipOrigin else None
 
-		if candidateSlot == skipSlot:
+		while candidateSlot == skipSlot or candidateSlot == startSlot:
 			candidateSlot -= 1
 
 		return candidateSlot
@@ -53,23 +55,22 @@ class Position(namedtuple('Position', ['boardList', 'playerToMove'])):
 			print("Please enter a valid slot to move")
 			return self
 
+		startSlot = slot
 		newBoardList = self.boardList[:]
 		piecesToMove = self.boardList[slot]
 		newBoardList[slot] = 0 # Clear the picked up slot
 		homeSlot = 0 if self.playerToMove else 7
 
 		for i in range(piecesToMove):
-			slot = self.nextSlot(slot)
+			slot = self.nextSlot(slot, startSlot)
 			newBoardList[slot] += 1
 
-		if slot == homeSlot:
-			nextPlayer = self.playerToMove
-		else:
-			nextPlayer = not self.playerToMove
+		nextPlayer = self.playerToMove if slot == homeSlot else not self.playerToMove
 
 		return Position(newBoardList, nextPlayer)
 
 
-piecesPerSlot = 4
-startingBoard = ([0] + [piecesPerSlot] * 6) * 2
+piecesPerSlot = cfg.stones
+totalSlots = (2 * cfg.slots + 2)
+startingBoard = ([0] + [piecesPerSlot] * cfg.slots) * 2
 startPos = Position(boardList = startingBoard, playerToMove = 0)
