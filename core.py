@@ -10,15 +10,18 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 	playerToMove is either 0 (first) or 1 (second)"""
 
 	def __init__(self, stoneList, playerToMove):
-		self.homeSlot = 0 if playerToMove else (cfg.slots + 1)
-		self.skipSlot = (cfg.slots + 1) if playerToMove else 0
-		self.totalSlots = (2 * cfg.slots + 2)
+		self.n = (cfg.slots + 1) # Useful number, distance between mancalas
+		self.homeMancala = 0 if playerToMove else self.n
+		self.oppMancala = self.n if playerToMove else 0
+		self.totalSlots = 2 * self.n
+		self.homeSlots = range(self.homeMancala + 1, self.homeMancala + self.n)
+		self.oppSlots = range(self.oppMancala + 1, self.oppMancala + self.n)
 
 	def __repr__(self):
 		"""We represent the board as a string of two lines.
 		Player 2's home slot on line 1 left, P1 on line 2 right"""
 		repString = "("
-		for slot in range(cfg.slots + 1): # Top row
+		for slot in range(self.n): # Top row
 			repString += "{} ".format(self.stoneList[slot])
 		repString += " )\n"
 
@@ -29,7 +32,7 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 		return repString
 
 	def endGame(self):
-		firstPlayerScore  = self.stoneList[cfg.slots + 1]
+		firstPlayerScore  = self.stoneList[self.n]
 		secondPlayerScore = self.stoneList[0]
 		if firstPlayerScore > secondPlayerScore:
 			print("Player One Wins!")
@@ -41,9 +44,9 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 	def listMoves(self):
 		""" Returns a list of valid slots to move """
 		moveList = []
-		startSlot = 1 if self.playerToMove else (cfg.slots + 2)
+		startSlot = (self.homeMancala + 1)
 
-		for slot in range(startSlot, startSlot + cfg.slots):
+		for slot in self.homeSlots:
 			if self.stoneList[slot] > 0:
 				moveList.append(slot)
 		if not moveList:
@@ -56,26 +59,26 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 		candidateSlot = (slot - 1) % self.totalSlots
 		startSlot = startSlot if cfg.skipOrigin else None
 
-		while candidateSlot == self.skipSlot or candidateSlot == startSlot:
+		while candidateSlot == self.oppMancala or candidateSlot == startSlot:
 			candidateSlot -= 1
 		return candidateSlot
 
 	def capNever(self, slot):
 		return self.stoneList
 
-	def capLoner(self, slot):
+	def capOppLoner(self, slot):
 		nextPos = self.stoneList[:]
-		if self.stoneList[slot] == 2: # Must have been one before
+		if self.stoneList[slot] == 2 and slot in self.oppSlots:
 			nextPos[slot] = 0
-			nextPos[self.homeSlot] += 2
+			nextPos[self.homeMancala] += 2
 		return nextPos
 
-	cap_dict = {None: capNever, 'finalOnSingleton': capLoner}
+	cap_dict = {None: capNever, 'finalOnEnemySingleton': capOppLoner}
 	checkCapture = cap_dict[cfg.captureMethod]
 
 	def resolve(self, slot):
 		resolvedPosition = self.checkCapture(slot)
-		nextPlayer = self.playerToMove if slot == self.homeSlot else not self.playerToMove
+		nextPlayer = self.playerToMove if slot == self.homeMancala else not self.playerToMove
 
 		return Position(resolvedPosition, nextPlayer)
 
