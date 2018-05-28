@@ -4,8 +4,8 @@ import cfg
 class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 	"""stoneList represents the state of the board
 	a list of fourteen numbers representing stones in each slot
-	stoneList[0] is Player 2's home slot, 6 their last slot,
-	7 Player 1's home and 13 is Player 2's last slot.
+	stoneList[0] is Player 2's home slot, cfg.stones their last slot,
+	(cfg.stones + 1) Player 1's home and (2 * cfg.stones + 1) their last.
 
 	playerToMove is either 0 (first) or 1 (second)"""
 
@@ -27,6 +27,16 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 		repString += ")"
 		return repString
 
+	def endGame(self):
+		firstPlayerScore  = stoneList[cfg.slots + 1]
+		secondPlayerScore = stoneList[0]
+		if firstPlayerScore > secondPlayerScore:
+			print("Player One Wins!")
+		elif secondPlayerScore > firstPlayerScore:
+			print("Player Two Wins!")
+		else:
+			print("It's a draw!")
+
 	def listMoves(self):
 		""" Returns a list of valid slots to move """
 		moveList = []
@@ -35,6 +45,9 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 		for slot in range(startSlot, startSlot + cfg.slots):
 			if self.stoneList[slot] > 0:
 				moveList.append(slot)
+		if not moveList:
+			self.endGame()
+
 		return moveList
 
 	def nextSlot(self, slot, startSlot):
@@ -47,7 +60,7 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 		return candidateSlot
 
 	def capNever(self, slot):
-		return self
+		return self.stoneList
 
 	def capLoner(self, slot):
 		nextPos = self.stoneList[:]
