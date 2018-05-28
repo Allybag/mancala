@@ -12,6 +12,7 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 	def __init__(self, stoneList, playerToMove):
 		self.homeSlot = 0 if playerToMove else (cfg.slots + 1)
 		self.skipSlot = (cfg.slots + 1) if playerToMove else 0
+		self.totalSlots = (2 * cfg.slots + 2)
 
 	def __repr__(self):
 		"""We represent the board as a string of two lines.
@@ -22,14 +23,14 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 		repString += " )\n"
 
 		repString += "( "
-		for slot in range((totalSlots - 1), cfg.slots, -1): # Bottom row
+		for slot in range((self.totalSlots - 1), cfg.slots, -1): # Bottom row
 			repString += " {}".format(self.stoneList[slot])
 		repString += ")"
 		return repString
 
 	def endGame(self):
-		firstPlayerScore  = stoneList[cfg.slots + 1]
-		secondPlayerScore = stoneList[0]
+		firstPlayerScore  = self.stoneList[cfg.slots + 1]
+		secondPlayerScore = self.stoneList[0]
 		if firstPlayerScore > secondPlayerScore:
 			print("Player One Wins!")
 		elif secondPlayerScore > firstPlayerScore:
@@ -52,7 +53,7 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 
 	def nextSlot(self, slot, startSlot):
 		""" Returns the next slot in the cycle """
-		candidateSlot = (slot - 1) % totalSlots
+		candidateSlot = (slot - 1) % self.totalSlots
 		startSlot = startSlot if cfg.skipOrigin else None
 
 		while candidateSlot == self.skipSlot or candidateSlot == startSlot:
@@ -94,8 +95,3 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 			nextPos[slot] += 1
 
 		return Position(nextPos, self.playerToMove).resolve(slot)
-
-piecesPerSlot = cfg.stones
-totalSlots = (2 * cfg.slots + 2)
-startingBoard = ([0] + [piecesPerSlot] * cfg.slots) * 2
-startPos = Position(startingBoard, 0)
