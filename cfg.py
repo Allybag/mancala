@@ -8,4 +8,8 @@ slots = 6
 skipOrigin = True
 
 # Capture Method
+# finalOnEnemySingleton | None
 captureMethod = 'finalOnEnemySingleton'
+
+# Engine player: 0 (first), 1 (second), None (off)
+enginePlayer = 1
