@@ -13,3 +13,6 @@ captureMethod = 'finalOnEnemySingleton'
 
 # Engine player: 0 (first), 1 (second), None (off)
 enginePlayer = 1
+
+# Depth for engine to search if enabled
+depth = 2
