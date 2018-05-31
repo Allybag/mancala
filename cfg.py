@@ -15,4 +15,4 @@ captureMethod = 'finalOnEnemySingleton'
 enginePlayer = 1
 
 # Depth for engine to search if enabled
-depth = 2
+depth = 5 # Can't go much deeper without alpha/beta, ~5sec

@@ -16,7 +16,7 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
         self.totalSlots = 2 * self.n
         self.homeSlots = range(self.homeMancala + 1, self.homeMancala + self.n)
         self.oppSlots = range(self.oppMancala + 1, self.oppMancala + self.n)
-        self.score = stoneList[self.homeMancala] - stoneList[self.oppMancala]
+        self.score = stoneList[self.n] - stoneList[0] # Score diff for Player 1
 
     def __repr__(self):
         """We represent the board as a string of two lines.
@@ -32,16 +32,6 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
         repString += ")"
         return repString
 
-    def endGame(self):
-        firstPlayerScore  = self.stoneList[self.n]
-        secondPlayerScore = self.stoneList[0]
-        if firstPlayerScore > secondPlayerScore:
-            print("Player One Wins!")
-        elif secondPlayerScore > firstPlayerScore:
-            print("Player Two Wins!")
-        else:
-            print("It's a draw!")
-
     def listMoves(self):
         """ Returns a list of valid slots to move """
         moveList = []
@@ -50,8 +40,6 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
         for slot in self.homeSlots:
             if self.stoneList[slot] > 0:
                 moveList.append(slot)
-        if not moveList:
-            self.endGame()
 
         return moveList
 
