@@ -34,12 +34,7 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 
     def listMoves(self):
         """ Returns a list of valid slots to move """
-        moveList = []
-        startSlot = (self.homeMancala + 1)
-
-        for slot in self.homeSlots:
-            if self.stoneList[slot] > 0:
-                moveList.append(slot)
+        moveList = [slot for slot in self.homeSlots if self.stoneList[slot] > 0]
 
         return moveList
 

@@ -1,0 +1,517 @@
+(0 4 4 4 4 4 4  )
+(  4 4 4 4 4 4 0)
+Current game:
+(0 4 4 4 4 4 4  )
+(  4 4 4 4 4 4 0)
+Current game:
+Playing Engine Move
+Playing move 11 with score 2
+(0 4 4 4 4 4 4  )
+(  4 4 0 5 5 5 1)
+Current game:11
+Playing Engine Move
+Playing move 8 with score 2
+(0 4 4 5 5 5 5  )
+(  4 4 0 5 5 0 2)
+Current game:11 8
+(0 4 4 5 5 5 5  )
+(  4 4 0 5 5 0 2)
+Current game:11 8
+Playing Engine Move
+Playing move 2 with score -4
+(1 5 0 5 5 5 5  )
+(  5 5 0 5 5 0 2)
+Current game:11 8 2
+(1 5 0 5 5 5 5  )
+(  5 5 0 5 5 0 2)
+Current game:11 8 2
+Playing Engine Move
+Playing move 9 with score 2
+(1 5 0 5 6 6 6  )
+(  5 5 0 5 0 1 3)
+Current game:11 8 2 9
+(1 5 0 5 6 6 6  )
+(  5 5 0 5 0 1 3)
+Current game:11 8 2 9
+Playing Engine Move
+Playing move 6 with score -5
+(2 6 1 6 7 7 0  )
+(  5 5 0 5 0 1 3)
+Current game:11 8 2 9 6
+Playing Engine Move
+Playing move 4 with score -5
+(3 7 2 7 0 7 0  )
+(  6 6 1 5 0 1 3)
+Current game:11 8 2 9 6 4
+(3 7 2 7 0 7 0  )
+(  6 6 1 5 0 1 3)
+Current game:11 8 2 9 6 4
+Playing Engine Move
+Playing move 8 with score 3
+(3 7 2 7 0 7 0  )
+(  6 6 1 5 0 0 4)
+Current game:11 8 2 9 6 4 8
+Playing Engine Move
+Playing move 10 with score 3
+(3 7 2 7 0 8 1  )
+(  6 6 1 0 1 1 5)
+Current game:11 8 2 9 6 4 8 10
+(3 7 2 7 0 8 1  )
+(  6 6 1 0 1 1 5)
+Current game:11 8 2 9 6 4 8 10
+Playing Engine Move
+Playing move 5 with score -6
+(6 8 3 8 1 0 1  )
+(  7 7 0 0 1 1 5)
+Current game:11 8 2 9 6 4 8 10 5
+(6 8 3 8 1 0 1  )
+(  7 7 0 0 1 1 5)
+Current game:11 8 2 9 6 4 8 10 5
+Playing Engine Move
+Playing move 8 with score 3
+(6 8 3 8 1 0 1  )
+(  7 7 0 0 1 0 6)
+Current game:11 8 2 9 6 4 8 10 5 8
+Playing Engine Move
+Playing move 12 with score 3
+(6 8 3 8 1 1 2  )
+(  7 0 1 1 2 1 7)
+Current game:11 8 2 9 6 4 8 10 5 8 12
+(6 8 3 8 1 1 2  )
+(  7 0 1 1 2 1 7)
+Current game:11 8 2 9 6 4 8 10 5 8 12
+Playing Engine Move
+Playing move 5 with score -6
+(6 8 3 8 2 0 2  )
+(  7 0 1 1 2 1 7)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5
+(6 8 3 8 2 0 2  )
+(  7 0 1 1 2 1 7)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5
+Playing Engine Move
+Playing move 8 with score 4
+(6 8 3 8 2 0 2  )
+(  7 0 1 1 2 0 8)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8
+Playing Engine Move
+Playing move 9 with score 4
+(6 8 3 8 2 0 2  )
+(  7 0 1 1 0 1 9)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9
+Playing Engine Move
+Playing move 8 with score 4
+(6 8 3 8 2 0 2  )
+(  7 0 1 1 0 0 10)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8
+Playing Engine Move
+Playing move 13 with score 4
+(6 8 3 8 2 0 3  )
+(  0 1 2 2 1 1 11)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13
+(6 8 3 8 2 0 3  )
+(  0 1 2 2 1 1 11)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13
+Playing Engine Move
+Playing move 1 with score -6
+(7 0 3 8 2 0 4  )
+(  1 2 3 3 2 2 11)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1
+(7 0 3 8 2 0 4  )
+(  1 2 3 3 2 2 11)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1
+Playing Engine Move
+Playing move 9 with score 4
+(7 0 3 8 2 0 4  )
+(  1 2 3 3 0 3 12)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9
+Playing Engine Move
+Playing move 13 with score 4
+(7 0 3 8 2 0 4  )
+(  0 3 3 3 0 3 12)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13
+(7 0 3 8 2 0 4  )
+(  0 3 3 3 0 3 12)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13
+Playing Engine Move
+Playing move 2 with score -6
+(8 1 0 8 2 0 4  )
+(  1 3 3 3 0 3 12)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2
+(8 1 0 8 2 0 4  )
+(  1 3 3 3 0 3 12)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2
+Playing Engine Move
+Playing move 10 with score 4
+(8 1 0 8 2 0 4  )
+(  1 3 3 0 1 4 13)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10
+Playing Engine Move
+Playing move 9 with score 4
+(8 1 0 8 2 0 4  )
+(  1 3 3 0 0 5 13)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9
+(8 1 0 8 2 0 4  )
+(  1 3 3 0 0 5 13)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9
+Playing Engine Move
+Playing move 1 with score -6
+(9 0 0 8 2 0 4  )
+(  1 3 3 0 0 5 13)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1
+Playing Engine Move
+Playing move 6 with score -6
+(9 0 1 9 3 1 0  )
+(  1 3 3 0 0 5 13)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6
+(9 0 1 9 3 1 0  )
+(  1 3 3 0 0 5 13)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6
+Playing Engine Move
+Playing move 8 with score 4
+(9 0 1 10 4 2 1  )
+(  1 3 3 0 0 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8
+(9 0 1 10 4 2 1  )
+(  1 3 3 0 0 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8
+Playing Engine Move
+Playing move 4 with score -5
+(10 1 2 11 0 2 1  )
+(  1 3 3 0 0 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4
+Playing Engine Move
+Playing move 2 with score -5
+(11 2 0 11 0 2 1  )
+(  1 3 3 0 0 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2
+Playing Engine Move
+Playing move 1 with score -5
+(14 0 0 11 0 2 1  )
+(  0 3 3 0 0 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1
+(14 0 0 11 0 2 1  )
+(  0 3 3 0 0 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1
+Playing Engine Move
+Playing move 12 with score 3
+(14 0 0 11 0 2 1  )
+(  0 0 4 1 1 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12
+(14 0 0 11 0 2 1  )
+(  0 0 4 1 1 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12
+Playing Engine Move
+Playing move 6 with score -4
+(14 0 0 11 0 3 0  )
+(  0 0 4 1 1 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6
+(14 0 0 11 0 3 0  )
+(  0 0 4 1 1 0 14)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6
+Playing Engine Move
+Playing move 11 with score 3
+(14 0 0 11 0 3 0  )
+(  0 0 0 2 2 1 15)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11
+Playing Engine Move
+Playing move 8 with score 3
+(14 0 0 11 0 3 0  )
+(  0 0 0 2 2 0 16)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8
+Playing Engine Move
+Playing move 9 with score 3
+(14 0 0 11 0 3 0  )
+(  0 0 0 2 0 1 17)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9
+Playing Engine Move
+Playing move 8 with score 3
+(14 0 0 11 0 3 0  )
+(  0 0 0 2 0 0 18)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8
+Playing Engine Move
+Playing move 10 with score 3
+(14 0 0 11 0 3 0  )
+(  0 0 0 0 1 1 18)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10
+(14 0 0 11 0 3 0  )
+(  0 0 0 0 1 1 18)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10
+Playing Engine Move
+Playing move 3 with score -4
+(15 1 1 0 0 4 1  )
+(  1 1 1 1 2 2 18)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3
+(15 1 1 0 0 4 1  )
+(  1 1 1 1 2 2 18)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3
+Playing Engine Move
+Playing move 8 with score 4
+(15 1 1 0 0 4 0  )
+(  1 1 1 1 2 0 21)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8
+(15 1 1 0 0 4 0  )
+(  1 1 1 1 2 0 21)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8
+Playing Engine Move
+Playing move 1 with score -7
+(16 0 1 0 0 4 0  )
+(  1 1 1 1 2 0 21)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1
+Playing Engine Move
+Playing move 2 with score -7
+(16 1 0 0 0 4 0  )
+(  1 1 1 1 2 0 21)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2
+(16 1 0 0 0 4 0  )
+(  1 1 1 1 2 0 21)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2
+Playing Engine Move
+Playing move 9 with score 7
+(16 1 0 0 0 4 0  )
+(  1 1 1 1 0 1 22)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9
+Playing Engine Move
+Playing move 8 with score 7
+(16 1 0 0 0 4 0  )
+(  1 1 1 1 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8
+Playing Engine Move
+Playing move 13 with score 7
+(16 1 0 0 0 4 0  )
+(  0 2 1 1 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13
+(16 1 0 0 0 4 0  )
+(  0 2 1 1 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13
+Playing Engine Move
+Playing move 1 with score -7
+(17 0 0 0 0 4 0  )
+(  0 2 1 1 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1
+Playing Engine Move
+Playing move 5 with score -7
+(17 1 1 1 1 0 0  )
+(  0 2 1 1 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5
+(17 1 1 1 1 0 0  )
+(  0 2 1 1 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5
+Playing Engine Move
+Playing move 12 with score 7
+(17 1 1 1 1 0 0  )
+(  0 0 2 2 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12
+(17 1 1 1 1 0 0  )
+(  0 0 2 2 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12
+Playing Engine Move
+Playing move 1 with score -7
+(18 0 1 1 1 0 0  )
+(  0 0 2 2 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1
+Playing Engine Move
+Playing move 3 with score -7
+(18 0 2 0 1 0 0  )
+(  0 0 2 2 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3
+(18 0 2 0 1 0 0  )
+(  0 0 2 2 0 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3
+Playing Engine Move
+Playing move 11 with score 7
+(18 0 2 0 1 0 0  )
+(  0 0 0 3 1 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11
+(18 0 2 0 1 0 0  )
+(  0 0 0 3 1 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11
+Playing Engine Move
+Playing move 2 with score -7
+(19 1 0 0 1 0 0  )
+(  0 0 0 3 1 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11 2
+Playing Engine Move
+Playing move 1 with score -7
+(20 0 0 0 1 0 0  )
+(  0 0 0 3 1 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11 2 1
+Playing Engine Move
+Playing move 4 with score -7
+(20 0 0 1 0 0 0  )
+(  0 0 0 3 1 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11 2 1 4
+(20 0 0 1 0 0 0  )
+(  0 0 0 3 1 0 23)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11 2 1 4
+Playing Engine Move
+Playing move 10 with score 7
+(20 0 0 1 0 0 0  )
+(  0 0 0 0 2 1 24)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11 2 1 4 10
+Playing Engine Move
+Playing move 8 with score 7
+(20 0 0 1 0 0 0  )
+(  0 0 0 0 2 0 25)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11 2 1 4 10 8
+Playing Engine Move
+Playing move 9 with score 7
+(20 0 0 1 0 0 0  )
+(  0 0 0 0 0 1 26)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11 2 1 4 10 8 9
+Playing Engine Move
+Playing move 8 with score 7
+(20 0 0 1 0 0 0  )
+(  0 0 0 0 0 0 27)
+Current game:11 8 2 9 6 4 8 10 5 8 12 5 8 9 8 13 1 9 13 2 10 9 1 6 8 4 2 1 12 6 11 8 9 8 10 3 8 1 2 9 8 13 1 5 12 1 3 11 2 1 4 10 8 9 8
+Game Over!
+Win for first player!
+         86347457 function calls (82709107 primitive calls) in 67.596 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      8/1    0.000    0.000   67.596   67.596 {built-in method builtins.exec}
+        1    0.000    0.000   67.596   67.596 mancala.py:1(<module>)
+        1    0.000    0.000   67.587   67.587 mancala.py:5(main)
+       55    0.000    0.000   67.584    1.229 engine.py:8(play)
+3638348/55    7.547    0.000   67.583    1.229 engine.py:19(negaMax)
+  3638348   11.867    0.000   48.133    0.000 core.py:75(move)
+  7276781   18.732    0.000   21.758    0.000 core.py:35(listMoves)
+  3638348    4.011    0.000   13.719    0.000 core.py:69(resolve)
+  7276697   11.802    0.000   11.802    0.000 core.py:12(__init__)
+  7276697    2.263    0.000    4.116    0.000 <string>:12(__new__)
+ 10099103    3.698    0.000    3.698    0.000 core.py:47(nextSlot)
+ 24733885    2.163    0.000    2.163    0.000 {method 'append' of 'list' objects}
+  3638348    1.863    0.000    1.863    0.000 core.py:59(capOppLoner)
+  7276697    1.853    0.000    1.853    0.000 {built-in method __new__ of type object at 0x1042a2d78}
+  3638293    0.921    0.000    0.921    0.000 {built-in method builtins.max}
+  4211333    0.862    0.000    0.862    0.000 {method 'insert' of 'list' objects}
+     12/2    0.000    0.000    0.009    0.005 <frozen importlib._bootstrap>:966(_find_and_load)
+     12/2    0.000    0.000    0.009    0.005 <frozen importlib._bootstrap>:936(_find_and_load_unlocked)
+     12/2    0.000    0.000    0.009    0.005 <frozen importlib._bootstrap>:651(_load_unlocked)
+      6/2    0.000    0.000    0.009    0.005 <frozen importlib._bootstrap_external>:672(exec_module)
+     18/2    0.000    0.000    0.009    0.004 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+        1    0.000    0.000    0.009    0.009 engine.py:1(<module>)
+        1    0.000    0.000    0.008    0.008 random.py:38(<module>)
+       12    0.000    0.000    0.005    0.000 <frozen importlib._bootstrap>:564(module_from_spec)
+        6    0.000    0.000    0.005    0.001 <frozen importlib._bootstrap_external>:919(create_module)
+        6    0.005    0.001    0.005    0.001 {built-in method _imp.create_dynamic}
+        1    0.000    0.000    0.005    0.005 hashlib.py:54(<module>)
+       12    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap>:870(_find_spec)
+       12    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1149(find_spec)
+       12    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1117(_get_spec)
+      282    0.001    0.000    0.002    0.000 {built-in method builtins.print}
+       14    0.000    0.000    0.001    0.000 hashlib.py:116(__get_openssl_constructor)
+        8    0.000    0.000    0.001    0.000 hashlib.py:73(__get_builtin_constructor)
+       36    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1233(find_spec)
+       85    0.001    0.000    0.001    0.000 core.py:21(__repr__)
+        6    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:743(get_code)
+     1336    0.001    0.000    0.001    0.000 {method 'format' of 'str' objects}
+       85    0.001    0.000    0.001    0.000 mancala.py:14(<listcomp>)
+        1    0.000    0.000    0.000    0.000 core.py:1(<module>)
+       54    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:75(_path_stat)
+        1    0.000    0.000    0.000    0.000 bisect.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:357(namedtuple)
+       54    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+       45    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1080(_path_importer_cache)
+       21    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:485(_compile_bytecode)
+      162    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:57(_path_join)
+        6    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:504(_init_module_attrs)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:830(get_data)
+        1    0.000    0.000    0.000    0.000 random.py:87(__init__)
+        1    0.000    0.000    0.000    0.000 random.py:96(seed)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:94(_path_isfile)
+        1    0.000    0.000    0.000    0.000 {function Random.seed at 0x104f96730}
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:85(_path_is_mode_type)
+      162    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:59(<listcomp>)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+      261    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+       18    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:403(cached)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:263(cache_from_source)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:361(_get_cached)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1228(_get_spec)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:840(path_stats)
+       84    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+      336    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 {method 'read' of '_io.FileIO' objects}
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:318(__exit__)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:524(spec_from_file_location)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:430(_validate_bytecode_header)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+      186    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+       78    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+       16    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:997(_handle_fromlist)
+       12    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:707(find_spec)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:927(exec_module)
+       36    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:847(__exit__)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:63(_path_split)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(parent)
+        1    0.000    0.000    0.000    0.000 random.py:71(Random)
+       84    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_md5}
+       53    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       12    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:52(_r_long)
+       36    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:843(__enter__)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:369(__init__)
+       60    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+       60    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+       36    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:37(_relax_case)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:311(__enter__)
+       35    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       24    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+       24    0.000    0.000    0.000    0.000 {built-in method posix.fspath}
+        2    0.000    0.000    0.000    0.000 {built-in method math.log}
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:307(__init__)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:780(find_spec)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:393(_check_name_wrapper)
+       18    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        1    0.000    0.000    0.000    0.000 <string>:5(Position)
+       12    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        6    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+       24    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+       48    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:321(<genexpr>)
+        3    0.000    0.000    0.000    0.000 __init__.py:420(<genexpr>)
+        3    0.000    0.000    0.000    0.000 __init__.py:422(<genexpr>)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method math.exp}
+       12    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:800(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha1}
+        1    0.000    0.000    0.000    0.000 {method 'union' of 'set' objects}
+       25    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        6    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
+        1    0.000    0.000    0.000    0.000 core.py:4(Position)
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha256}
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.repr}
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:424(has_location)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:908(__init__)
+        1    0.000    0.000    0.000    0.000 random.py:663(SystemRandom)
+        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha224}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha384}
+        2    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:669(create_module)
+        1    0.000    0.000    0.000    0.000 cfg.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha512}
+        3    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:825(get_filename)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
