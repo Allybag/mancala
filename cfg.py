@@ -8,11 +8,14 @@ slots = 6
 skipOrigin = True
 
 # Capture Method
-# finalOnEnemySingleton | None
-captureMethod = 'finalOnEnemySingleton'
+# None |finalOnEnemySingleton | finalOnHomeEmptyCapRow
+captureMethod = 'finalOnHomeEmptyCapRow'
+
+# Player scores all remaining pieces on game end
+finalScoreAllPieces = True
 
 # Engine player: 0 (first), 1 (second), None (off)
-enginePlayer = 1
+enginePlayer = 0
 
 # Depth for engine to search if enabled
 depth = 8 

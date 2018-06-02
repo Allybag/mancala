@@ -35,7 +35,9 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
     def listMoves(self):
         """ Returns a list of valid slots to move """
         moveList = [slot for slot in self.homeSlots if self.stoneList[slot] > 0]
-
+        if cfg.finalScoreAllPieces and not moveList:
+            oppStoneCount = sum([self.stoneList[slot] for slot in self.oppSlots])
+            self.score -= oppStoneCount # Final move will never change player
         return moveList
 
     def nextSlot(self, slot, startSlot):
@@ -52,12 +54,22 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 
     def capOppLoner(self, slot):
         nextPos = self.stoneList[:]
-        if self.stoneList[slot] == 2 and slot in self.oppSlots:
+        if self.stoneList[slot] == 2 and slot in self.oppSlots: # slot was 1 before move
             nextPos[slot] = 0
             nextPos[self.homeMancala] += 2
         return nextPos
 
-    cap_dict = {None: capNever, 'finalOnEnemySingleton': capOppLoner}
+    def capRowHomeEmpty(self, slot): # Ridiculously powerful, from play-mancala.com
+        nextPos = self.stoneList[:]
+        if self.stoneList[slot] == 1 and slot in self.homeSlots:
+            oppSlot = self.totalSlots - slot
+            cappedStoneCount = 1 + self.stoneList[oppSlot]
+            nextPos[slot] = nextPos[oppSlot] = 0
+            nextPos[self.homeMancala] += cappedStoneCount
+        return nextPos
+
+    cap_dict = {None: capNever, 'finalOnEnemySingletonCapSlot': capOppLoner,
+                'finalOnHomeEmptyCapRow': capRowHomeEmpty}
     checkCapture = cap_dict[cfg.captureMethod]
 
     def resolve(self, slot):
