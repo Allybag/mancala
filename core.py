@@ -1,18 +1,18 @@
 from collections import namedtuple
 import cfg
 
-class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
+class Position(namedtuple('Position', ['stoneList', 'firstToMove'])):
     """stoneList represents the state of the board
     a list of fourteen numbers representing stones in each slot
     stoneList[0] is Player 2's home slot, cfg.stones their last slot,
     (cfg.stones + 1) Player 1's home and (2 * cfg.stones + 1) their last.
 
-    playerToMove is either 0 (first) or 1 (second)"""
+    firstToMove is either False (first) or True (second)"""
 
-    def __init__(self, stoneList, playerToMove):
+    def __init__(self, stoneList, firstToMove):
         self.n = (cfg.slots + 1) # Useful number, distance between mancalas
-        self.homeMancala = 0 if playerToMove else self.n
-        self.oppMancala = self.n if playerToMove else 0
+        self.homeMancala = 0 if firstToMove else self.n
+        self.oppMancala = self.n if firstToMove else 0
         self.totalSlots = 2 * self.n
         self.homeSlots = range(self.homeMancala + 1, self.homeMancala + self.n)
         self.oppSlots = range(self.oppMancala + 1, self.oppMancala + self.n)
@@ -31,6 +31,13 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
             repString += " {}".format(self.stoneList[slot])
         repString += ")"
         return repString
+
+    def machineRep(self):
+        byteRep = bytes()
+        for slot in self.stoneList:
+            byteRep = byteRep + bytes(str(slot), 'ascii') + b','
+        byteRep = byteRep + bytes(str(self.firstToMove), 'ascii') + b'\n'
+        return byteRep
 
     def listMoves(self):
         """ Returns a list of valid slots to move """
@@ -74,9 +81,9 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
 
     def resolve(self, slot):
         resolvedPosition = self.checkCapture(slot)
-        nextPlayer = self.playerToMove if slot == self.homeMancala else not self.playerToMove
+        firstToMove = self.firstToMove if slot == self.homeMancala else not self.firstToMove
 
-        return Position(resolvedPosition, nextPlayer)
+        return Position(resolvedPosition, firstToMove)
 
     def move(self, slot):
         """Takes the current position, and a slot from which
@@ -93,4 +100,4 @@ class Position(namedtuple('Position', ['stoneList', 'playerToMove'])):
             slot = self.nextSlot(slot, startSlot)
             nextPos[slot] += 1
 
-        return Position(nextPos, self.playerToMove).resolve(slot)
+        return Position(nextPos, self.firstToMove).resolve(slot)

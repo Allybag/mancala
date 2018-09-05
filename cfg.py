@@ -15,7 +15,8 @@ captureMethod = 'finalOnHomeEmptyCapRow'
 finalScoreAllPieces = True
 
 # Engine player: 0 (first), 1 (second), None (off)
-enginePlayer = 0
+engineIsFirst = False
+remoteEngine = True
 
 # Depth for engine to search if enabled
 depth = 8 
