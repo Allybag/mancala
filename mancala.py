@@ -26,15 +26,16 @@ def main():
                 print("Win for {} player!".format(winner))
             break
 
-        if cfg.engineIsFirst == pos.firstToMove:
-            print("Playing Engine Move")
-            if cfg.remoteEngine:
-                move = int(ceeSock.recv(4096))
-                pos = pos.move(move)
-            else:
-                pos, move = engine.play(pos)
-            notation.append(move)
-            continue
+        if cfg.engineIsFirst is not None:
+            if cfg.engineIsFirst == pos.firstToMove:
+                print("Playing Engine Move")
+                if cfg.remoteEngine:
+                    move = int(ceeSock.recv(4096))
+                    pos = pos.move(move)
+                else:
+                    pos, move = engine.play(pos)
+                notation.append(move)
+                continue
 
         move = int(input())
 
