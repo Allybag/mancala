@@ -5,9 +5,7 @@ class Position(namedtuple('Position', ['stoneList', 'firstToMove'])):
     """stoneList represents the state of the board
     a list of fourteen numbers representing stones in each slot
     stoneList[0] is Player 2's home slot, cfg.stones their last slot,
-    (cfg.stones + 1) Player 1's home and (2 * cfg.stones + 1) their last.
-
-    firstToMove is either False (first) or True (second)"""
+    (cfg.stones + 1) Player 1's home and (2 * cfg.stones + 1) their last."""
 
     def __init__(self, stoneList, firstToMove):
         self.n = (cfg.slots + 1) # Useful number, distance between mancalas
@@ -36,7 +34,7 @@ class Position(namedtuple('Position', ['stoneList', 'firstToMove'])):
         byteRep = bytes()
         for slot in self.stoneList:
             byteRep = byteRep + bytes(str(slot), 'ascii') + b','
-        byteRep = byteRep + bytes(str(self.firstToMove), 'ascii') + b'\n'
+        byteRep = byteRep + bytes(str(self.firstToMove), 'ascii') + b'\0'
         return byteRep
 
     def listMoves(self):

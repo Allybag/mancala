@@ -8,11 +8,11 @@ slots = 6
 skipOrigin = True
 
 # Capture Method
-# None |finalOnEnemySingleton | finalOnHomeEmptyCapRow
-captureMethod = 'finalOnHomeEmptyCapRow'
+# None |finalOnEnemySingletonCapSlot | finalOnHomeEmptyCapRow
+captureMethod = 'finalOnEnemySingletonCapSlot'
 
 # Player scores all remaining pieces on game end
-finalScoreAllPieces = True
+finalScoreAllPieces = False
 
 # Engine player: 0 (first), 1 (second), None (off)
 engineIsFirst = False

@@ -20,7 +20,7 @@ def main():
             ceeSock.send(pos.machineRep())
 
         if not pos.listMoves():
-            winner = "first" if pos.score > 0 else "second" if pos.score < 0 else None
+            winner = "first" if pos.score < 0 else "second" if pos.score > 0 else None
             print("Game Over!")
             if winner:
                 print("Win for {} player!".format(winner))
@@ -30,7 +30,7 @@ def main():
             if cfg.engineIsFirst == pos.firstToMove:
                 print("Playing Engine Move")
                 if cfg.remoteEngine:
-                    move = int(ceeSock.recv(4096))
+                    move = int(ceeSock.recv(256))
                     pos = pos.move(move)
                 else:
                     pos, move = engine.play(pos)

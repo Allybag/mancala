@@ -4,6 +4,7 @@
 #include<arpa/inet.h> //inet_addr
 #include<netdb.h> //hostent
 #include<cstdlib> //rand
+#define PORT 18877
 
 std::string tail(std::string const& source, size_t const length) {
   if (length >= source.size()) { return source; }
@@ -20,9 +21,9 @@ private:
 
 public:
     tcp_client();
-    bool conn(char*, int);
+    bool conn(const char*, int);
     bool send_data(std::string&);
-    void receive(size_t, char*);
+    bool receive(size_t, char*);
 };
 
 tcp_client::tcp_client()
@@ -32,7 +33,7 @@ tcp_client::tcp_client()
     address = "";
 }
 
-bool tcp_client::conn(char* address , int port)
+bool tcp_client::conn(const char* address , int port)
 {
     //create socket if it is not already created
     if(sock == -1)
@@ -42,8 +43,6 @@ bool tcp_client::conn(char* address , int port)
         {
             perror("Could not create socket");
         }
-
-        std::cout << "Socket created" << std::endl;
     }
 
     //setup address structure
@@ -67,7 +66,6 @@ bool tcp_client::conn(char* address , int port)
         for(int i = 0; addr_list[i] != NULL; i++)
         {
             server.sin_addr = *addr_list[i];
-            std::cout << address << " resolved to " << inet_ntoa(*addr_list[i]) << std::endl;
             break;
         }
     }
@@ -80,7 +78,6 @@ bool tcp_client::conn(char* address , int port)
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
 
-    //Connect to remote server
     if (connect(sock, (struct sockaddr*)&server, sizeof(server)) < 0)
     {
         perror("connect failed. Error");
@@ -101,25 +98,27 @@ bool tcp_client::send_data(std::string& data)
     return true;
 }
 
-void tcp_client::receive(size_t recvBuffSize, char* recvBuff)
+bool tcp_client::receive(size_t recvBuffSize, char* recvBuff)
 {
-    if (recv(sock, recvBuff, recvBuffSize, 0) < 0)
+    if (recv(sock, recvBuff, recvBuffSize, 0) <= 0)
     {
-	recvBuff[0] = '\0';
-        std::cout << "recv failed" << std::endl;
+		recvBuff[0] = '\0';
+        std::cout << "Socket receive closed." << std::endl;
+		return false;
     }
+	return true;
 }
 
 int main(int argc , char *argv[])
 {
-    char host[] = "localhost";
-    char recvBuff[1024];
+    const char* host = "localhost";
+    char recvBuff[256];
     std::string firstToMove;
     std::string randomMove;
     tcp_client client;
 
     //connect to host
-    if (!client.conn(host, 18283))
+    if (!client.conn(host, PORT))
     {
         std::cout << "Could not connect" << std::endl;
         return 1;
@@ -127,12 +126,12 @@ int main(int argc , char *argv[])
 
     while (true)
     {
-        //receive and echo reply
-        client.receive(sizeof(recvBuff), recvBuff);
-        std::cout << recvBuff;
-        firstToMove = tail(recvBuff, 6);
+        if (!client.receive(sizeof(recvBuff), recvBuff))
+			break;
+        std::cout << recvBuff << std::endl;
+        firstToMove = tail(recvBuff, 5);
 
-        if (firstToMove == "False\n")
+        if (firstToMove == "False")
         {
             randomMove = std::to_string((rand() % 6) + 8);
             if (!client.send_data(randomMove))
