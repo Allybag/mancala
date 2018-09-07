@@ -1,15 +1,12 @@
 #include<iostream>    //std::cout
 #include<string>  //std::string
+#include<vector> //std::vector
 #include<sys/socket.h>    //socket
 #include<arpa/inet.h> //inet_addr
 #include<netdb.h> //hostent
-#include<cstdlib> //rand
+#include<cstdlib> //rand()
+#include<cctype> //isdigit()
 #define PORT 18877
-
-std::string tail(std::string const& source, size_t const length) {
-  if (length >= source.size()) { return source; }
-  return source.substr(source.size() - length);
-}
 
 class tcp_client
 {
@@ -109,6 +106,40 @@ bool tcp_client::receive(size_t recvBuffSize, char* recvBuff)
 	return true;
 }
 
+struct pos
+{
+private:
+	std::vector<int> position;
+
+public:
+	pos(const char*);
+	bool firstToMove;
+};
+
+pos::pos(const char* recvBuff)
+{
+	int slotCount = 0;
+	const char* recvChar = recvBuff;
+	while (*recvChar)
+	{
+		if (*recvChar == ',')
+		{
+			position.push_back(slotCount);
+			slotCount = 0;
+		} else if (isdigit(*recvChar)) {
+			slotCount *= 10;
+			slotCount += (*recvChar - '0');
+		} else if (*recvChar == 'T') {
+			firstToMove = true;
+			break;
+		} else if (*recvChar == 'F') {
+			firstToMove = false;
+			break;
+		}
+		++recvChar;
+	}
+}
+
 int main(int argc , char *argv[])
 {
     const char* host = "localhost";
@@ -129,9 +160,9 @@ int main(int argc , char *argv[])
         if (!client.receive(sizeof(recvBuff), recvBuff))
 			break;
         std::cout << recvBuff << std::endl;
-        firstToMove = tail(recvBuff, 5);
+		pos recvPos(recvBuff);
 
-        if (firstToMove == "False")
+        if (!recvPos.firstToMove)
         {
             randomMove = std::to_string((rand() % 6) + 8);
             if (!client.send_data(randomMove))
