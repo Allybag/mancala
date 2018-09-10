@@ -1,9 +1,8 @@
 #include "tcp_client.h"
-#include "pos.h"
+#include "game.h"
 #define PORT 18877
 
-int main(int argc , char *argv[])
-{
+int main(int argc , char *argv[]) {
     const char* host = "localhost";
     char recvBuff[256];
     std::string firstToMove;
@@ -11,26 +10,23 @@ int main(int argc , char *argv[])
     tcp_client client;
 
     //connect to host
-    if (!client.conn(host, PORT))
-    {
+    if (!client.conn(host, PORT)) {
         std::cout << "Could not connect" << std::endl;
         return 1;
     }
 
-    while (true)
-    {
+    while (true) {
         if (!client.receive(sizeof(recvBuff), recvBuff))
 			break;
-        std::cout << recvBuff << std::endl;
-		pos recvPos(recvBuff);
+		game gameState(recvBuff);
+        std::cout << gameState.getScore() << std::endl;
 
-        if (!recvPos.firstToMove)
-        {
+
+        if (gameState.playerToMove == 2) {
             randomMove = std::to_string((rand() % 6) + 8);
             if (!client.send_data(randomMove))
                 break;
         }
     }
-
     return 0;
 }

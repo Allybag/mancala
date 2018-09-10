@@ -6,8 +6,7 @@
 #include<arpa/inet.h> //inet_addr
 #include<netdb.h> //hostent
 
-class tcp_client
-{
+class tcp_client {
 private:
     int sock;
     std::string address;
