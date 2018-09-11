@@ -2,7 +2,7 @@
 #include "game.h"
 #define PORT 18877
 
-int main(int argc , char *argv[]) {
+int main() {
     const char* host = "localhost";
     char recvBuff[256];
     std::string firstToMove;

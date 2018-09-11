@@ -6,7 +6,7 @@ tcp_client::tcp_client() {
     address = "";
 }
 
-bool tcp_client::conn(const char* address , int port) {
+bool tcp_client::conn(const char* connAddress , int connPort) {
     //create socket if it is not already created
     if(sock == -1) {
         sock = socket(AF_INET , SOCK_STREAM , 0);
@@ -16,12 +16,12 @@ bool tcp_client::conn(const char* address , int port) {
     }
 
     //setup address structure
-    if(inet_addr(address) == -1) {
+    if(inet_addr(connAddress) == -1) {
         struct hostent *host_entry;
         struct in_addr **addr_list;
 
         //resolve the hostname, its not an ip address
-        if ((host_entry = gethostbyname(address)) == NULL) {
+        if ((host_entry = gethostbyname(connAddress)) == NULL) {
             //gethostbyname failed
             herror("gethostbyname");
             std::cout << "Failed to resolve hostname\n";
@@ -37,11 +37,11 @@ bool tcp_client::conn(const char* address , int port) {
         }
     } else {
         //plain ip address
-        server.sin_addr.s_addr = inet_addr(address);
+        server.sin_addr.s_addr = inet_addr(connAddress);
     }
 
     server.sin_family = AF_INET;
-    server.sin_port = htons(port);
+    server.sin_port = htons(connPort);
 
     if (connect(sock, (struct sockaddr*)&server, sizeof(server)) < 0) {
         perror("connect failed. Error");
