@@ -6,23 +6,21 @@
 game::game(const char* recvBuff)
 {
 	int slotCount = 0;
-	int totalSlots = 0;
-	Slot* head = nullptr;
+	slot* head = nullptr;
 	const char* recvChar = recvBuff;
 	while (*recvChar)
 	{
 		if (*recvChar == ',')
 		{
-			Slot* s = new Slot();
+			slot* s = new slot();
 			s->count = slotCount;
 			s->next = head;
+			s->prev = nullptr;
+			if (head) // If we're not the first element`
+				head->prev = s;
 			head = s;
+			slotVec.push_back(*s);
 			slotCount = 0;
-			if (totalSlots == 0)
-				firstMancala = s;
-			if (totalSlots == (SLOTS + 1))
-				secondMancala = s;
-			++totalSlots;
 		} else if (isdigit(*recvChar)) {
 			slotCount *= 10;
 			slotCount += (*recvChar - '0');
@@ -35,6 +33,29 @@ game::game(const char* recvBuff)
 		}
 		++recvChar;
 	}
+	firstMancala  = &(slotVec[0]);
+	secondMancala = &(slotVec[(SLOTS + 1)]);
+	// Make the linked list cyclical
+	slotVec.front().next = &(slotVec.back());
+	slotVec.back().prev = &(slotVec.front());
 
 }
 
+void game::print() {
+	std::string outString;
+	for (auto gameSlot: slotVec) {
+		outString = outString + std::to_string(gameSlot.count) + ",";
+	}
+	outString = outString + std::to_string(playerToMove);
+	std::cout << outString << std::endl;
+}
+
+void game::move(int slotNum) {
+	int stonesPlayed = 0;
+	slot* dropSlot = slotVec[slotNum].next;
+	while (stonesPlayed < slotNum) {
+		dropSlot->count += 1;
+		dropSlot = dropSlot->next;
+		++stonesPlayed;
+	}
+}

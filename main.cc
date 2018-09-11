@@ -20,6 +20,8 @@ int main(int argc , char *argv[]) {
 			break;
 		game gameState(recvBuff);
         std::cout << gameState.getScore() << std::endl;
+		std::cout << recvBuff << std::endl;
+        gameState.print();
 
 
         if (gameState.playerToMove == 2) {

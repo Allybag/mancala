@@ -5,10 +5,11 @@
 #include<vector> //std::vector
 #include<cctype> //isdigit()
 
-struct Slot {
+struct slot {
 	int count;
 	int mancala; // 0: No, 1: First, 2: Second
-	Slot *next;
+	slot* next;
+	slot* prev;
 };
 
 class game {
@@ -19,14 +20,17 @@ public:
 	game(const char*);
 	int playerToMove;
 	int getScore() { return (firstMancala->count - secondMancala->count); }
+	void print();
+	void move(int);
 	// Current plan:
-	// Iterate through the char*, creating n Slots, 
+	// Iterate through the char*, creating n slots,
 	// storing pointers to both mancalas, and set
 	// tail->next to be firstMancala (Logic muddled)
-	
-	
+
+
 private:
-	Slot* firstMancala;
-	Slot* secondMancala;
+	slot* firstMancala;
+	slot* secondMancala;
+	std::vector<slot> slotVec;
 };
 #endif
