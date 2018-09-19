@@ -15,8 +15,9 @@ bool tcp_client::conn(const char* connAddress , int connPort) {
         }
     }
 
+	struct in_addr* resolvedAddress = nullptr;
     //setup address structure
-    if(inet_addr(connAddress) == -1) {
+    if(inet_aton(connAddress, resolvedAddress) == 0) {
         struct hostent *host_entry;
         struct in_addr **addr_list;
 
@@ -37,7 +38,7 @@ bool tcp_client::conn(const char* connAddress , int connPort) {
         }
     } else {
         //plain ip address
-        server.sin_addr.s_addr = inet_addr(connAddress);
+        server.sin_addr = *resolvedAddress;
     }
 
     server.sin_family = AF_INET;

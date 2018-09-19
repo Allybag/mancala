@@ -6,8 +6,11 @@ int main() {
     const char* host = "localhost";
     char recvBuff[256];
     std::string firstToMove;
-    std::string randomMove;
+    int randomMove;
+    std::string sendStr;
     tcp_client client;
+	game gameState;
+	std::vector<int> moveList;
 
     //connect to host
     if (!client.conn(host, PORT)) {
@@ -18,15 +21,20 @@ int main() {
     while (true) {
         if (!client.receive(sizeof(recvBuff), recvBuff))
 			break;
-		game gameState(recvBuff);
-        std::cout << gameState.getScore() << std::endl;
+		gameState.accept(recvBuff);
+        //std::cout << gameState.getScore() << std::endl;
 		std::cout << recvBuff << std::endl;
         gameState.print();
 
 
         if (gameState.playerToMove == 2) {
-            randomMove = std::to_string((rand() % 6) + 8);
-            if (!client.send_data(randomMove))
+			moveList = gameState.listMoves();
+            int randomInt = rand() % moveList.size();
+			randomMove = moveList[randomInt];
+			gameState.move(randomMove);
+			gameState.print();
+            sendStr = std::to_string(randomMove);
+            if (!client.send_data(sendStr))
                 break;
         }
     }

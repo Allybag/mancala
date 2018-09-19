@@ -3,23 +3,16 @@
 #define SLOTS 6
 
 
-game::game(const char* recvBuff)
-{
+void game::accept(const char* recvBuff) {
+	slotVec.clear();
+	mancalaSlots.clear();
 	int slotCount = 0;
-	slot* head = nullptr;
 	const char* recvChar = recvBuff;
 	while (*recvChar)
 	{
 		if (*recvChar == ',')
 		{
-			slot* s = new slot();
-			s->count = slotCount;
-			s->next = head;
-			s->prev = nullptr;
-			if (head) // If we're not the first element`
-				head->prev = s;
-			head = s;
-			slotVec.push_back(*s);
+			slotVec.push_back(slotCount);
 			slotCount = 0;
 		} else if (isdigit(*recvChar)) {
 			slotCount *= 10;
@@ -33,18 +26,15 @@ game::game(const char* recvBuff)
 		}
 		++recvChar;
 	}
-	firstMancala  = &(slotVec[0]);
-	secondMancala = &(slotVec[(SLOTS + 1)]);
-	// Make the linked list cyclical
-	slotVec.front().next = &(slotVec.back());
-	slotVec.back().prev = &(slotVec.front());
-
+	mancalaSlots.push_back(5); // Gibberish in position 1
+	mancalaSlots.push_back(0); // Player 1 Mancala
+	mancalaSlots.push_back(SLOTS + 1); // Player 2 Mancala
 }
 
 void game::print() {
 	std::string outString;
 	for (auto gameSlot: slotVec) {
-		outString = outString + std::to_string(gameSlot.count) + ",";
+		outString = outString + std::to_string(gameSlot) + ",";
 	}
 	outString = outString + std::to_string(playerToMove);
 	std::cout << outString << std::endl;
@@ -52,10 +42,30 @@ void game::print() {
 
 void game::move(int slotNum) {
 	int stonesPlayed = 0;
-	slot* dropSlot = slotVec[slotNum].next;
-	while (stonesPlayed < slotNum) {
-		dropSlot->count += 1;
-		dropSlot = dropSlot->next;
+	int stoneCount = slotVec[slotNum];
+	int opposingPlayer = playerToMove % 2 + 1; // Toggles 1 <-> 2
+	std::cout << "Stone Count: " << stoneCount << std::endl;
+	slotVec[slotNum] = 0;
+	while (stonesPlayed < stoneCount) {
+		--slotNum;
+		if (slotNum == mancalaSlots[opposingPlayer])
+			continue;
+		if (slotNum < 0)
+			slotNum = slotVec.size() - 1;
+		slotVec[slotNum] += 1;
 		++stonesPlayed;
 	}
+	if (slotNum != mancalaSlots[playerToMove])
+		playerToMove = opposingPlayer;
+}
+
+std::vector<int> game::listMoves() {
+	std::vector<int> movables;
+	int homeSlot = mancalaSlots[playerToMove] + 1;
+	while (homeSlot <= mancalaSlots[playerToMove] + SLOTS) {
+		if (slotVec[homeSlot] > 0)
+			movables.push_back(homeSlot);
+		++homeSlot;
+	}
+	return movables;
 }

@@ -5,21 +5,14 @@
 #include<vector> //std::vector
 #include<cctype> //isdigit()
 
-struct slot {
-	int count;
-	int mancala; // 0: No, 1: First, 2: Second
-	slot* next;
-	slot* prev;
-};
-
 class game {
 	// game will basically be a cyclic linked list
 	// keeping pointers to both mancalas, as well
 	// as knowing who is to play
 public:
-	game(const char*);
+	void accept(const char*);
+	std::vector<int> listMoves();
 	int playerToMove;
-	int getScore() { return (firstMancala->count - secondMancala->count); }
 	void print();
 	void move(int);
 	// Current plan:
@@ -29,8 +22,7 @@ public:
 
 
 private:
-	slot* firstMancala;
-	slot* secondMancala;
-	std::vector<slot> slotVec;
+	std::vector<int> slotVec;
+	std::vector<int> mancalaSlots;
 };
 #endif
