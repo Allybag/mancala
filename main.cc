@@ -29,7 +29,7 @@ int main() {
 
         if (gameState.playerToMove == 2) {
 			moveList = gameState.listMoves();
-            int randomInt = rand() % moveList.size();
+            unsigned long randomInt = rand() % moveList.size();
 			randomMove = moveList[randomInt];
 			gameState.move(randomMove);
 			gameState.print();

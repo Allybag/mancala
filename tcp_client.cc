@@ -31,11 +31,7 @@ bool tcp_client::conn(const char* connAddress , int connPort) {
 
         //Cast the h_addr_list to in_addr , since h_addr_list also has the ip address in long format only
         addr_list = (struct in_addr **) host_entry->h_addr_list;
-
-        for(int i = 0; addr_list[i] != NULL; i++) {
-            server.sin_addr = *addr_list[i];
-            break;
-        }
+		server.sin_addr = *addr_list[0];
     } else {
         //plain ip address
         server.sin_addr = *resolvedAddress;
