@@ -9,7 +9,7 @@ skipOrigin = True
 
 # Capture Method
 # None |finalOnEnemySingletonCapSlot | finalOnHomeEmptyCapRow
-captureMethod = 'finalOnEnemySingletonCapSlot'
+captureMethod = 'None'
 
 # Player scores all remaining pieces on game end
 finalScoreAllPieces = False

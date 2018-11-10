@@ -37,7 +37,12 @@ def main():
                 notation.append(move)
                 continue
 
-        move = int(input())
+        moveInput = input()
+        try:
+            move = int(moveInput)
+        except:
+            # If this fails, it will just register as an invalid move later
+            move = None
 
         if move in pos.listMoves():
             # Trying an invalid move is safe, but we don't want to record it

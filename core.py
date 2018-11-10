@@ -73,7 +73,7 @@ class Position(namedtuple('Position', ['stoneList', 'firstToMove'])):
             nextPos[self.homeMancala] += cappedStoneCount
         return nextPos
 
-    cap_dict = {None: capNever, 'finalOnEnemySingletonCapSlot': capOppLoner,
+    cap_dict = {"None": capNever, 'finalOnEnemySingletonCapSlot': capOppLoner,
                 'finalOnHomeEmptyCapRow': capRowHomeEmpty}
     checkCapture = cap_dict[cfg.captureMethod]
 

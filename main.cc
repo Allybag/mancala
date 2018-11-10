@@ -22,16 +22,14 @@ int main() {
         if (!client.receive(sizeof(recvBuff), recvBuff))
 			break;
 		gameState.accept(recvBuff);
-        //std::cout << gameState.getScore() << std::endl;
-		std::cout << recvBuff << std::endl;
-        gameState.print();
-
 
         if (gameState.playerToMove == 2) {
 			moveList = gameState.listMoves();
             unsigned long randomInt = rand() % moveList.size();
 			randomMove = moveList[randomInt];
+			std::cout << "Score before: " << gameState.score() << std::endl;
 			gameState.move(randomMove);
+			std::cout << "Score after: " << gameState.score() << std::endl;
 			gameState.print();
             sendStr = std::to_string(randomMove);
             if (!client.send_data(sendStr))
