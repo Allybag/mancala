@@ -30,11 +30,13 @@ def main():
             if cfg.engineIsFirst == pos.firstToMove:
                 print("Playing Engine Move")
                 if cfg.remoteEngine:
-                    move = int(ceeSock.recv(256))
-                    pos = pos.move(move)
+                    movesReceived = ceeSock.recv(512).split(b",")
+                    for move in movesReceived[:-1]: # engine.cc adds a trailing ,
+                        pos = pos.move(int(move))
+                        notation.append(int(move))
                 else:
                     pos, move = engine.play(pos)
-                notation.append(move)
+                    notation.append(move)
                 continue
 
         moveInput = input()

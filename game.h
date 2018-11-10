@@ -11,7 +11,7 @@ public:
 	std::vector<int> listMoves();
 	int playerToMove;
 	void print();
-	void move(int);
+	void move(int); // May not end turn (final slot drops in mancala)
 	int score() { return slotVec[mancalaSlots[1]] - slotVec[mancalaSlots[2]]; };
 
 private:

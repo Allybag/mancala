@@ -44,7 +44,6 @@ void game::move(int slotNum) {
 	int stonesPlayed = 0;
 	int stoneCount = slotVec[slotNum];
 	int opposingPlayer = playerToMove % 2 + 1; // Toggles 1 <-> 2
-	std::cout << "Stone Count: " << stoneCount << std::endl;
 	slotVec[slotNum] = 0;
 	while (stonesPlayed < stoneCount) {
 		--slotNum;
